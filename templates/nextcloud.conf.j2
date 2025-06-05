@@ -7,6 +7,9 @@
     Order allow,deny
     allow from all
   </Directory>
+  <IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
+  </IfModule>
   ErrorLog ${APACHE_LOG_DIR}/nextcloud-error.log
   LogLevel warn
   CustomLog ${APACHE_LOG_DIR}/nextcloud-access.log combined
